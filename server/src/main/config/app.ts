@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
 
-import { setupRoutes } from './routes'
+import { setupRoutes } from '@/main/config/routes'
 
 const app = Fastify({
   logger: true

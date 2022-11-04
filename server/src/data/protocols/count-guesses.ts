@@ -1,9 +1,9 @@
-import { CountPoolsService } from '@/domain/use-cases/count-pools'
+import { CountGuessesService } from '@/domain/use-cases/count-guesses'
 
-export interface CountPoolsRepository {
-  count: () => Promise<CountPoolsRepository.Output>
+export interface CountGuessesRepository {
+  count: () => Promise<CountGuessesRepository.Output>
 }
 
-export namespace CountPoolsRepository {
-  export type Output = CountPoolsService.Output
+export namespace CountGuessesRepository {
+  export type Output = CountGuessesService.Output
 }

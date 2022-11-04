@@ -21,6 +21,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src", "prisma", "vitest.config.ts"],
+  "include": ["src", "prisma", "vitest.config.ts", "tests"],
   "exclude": []
 }

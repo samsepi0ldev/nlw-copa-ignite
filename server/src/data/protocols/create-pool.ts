@@ -6,5 +6,6 @@ export namespace CreatePoolRepository {
   export type Input = {
     title: string
     code: string
+    ownerId?: string
   }
 }

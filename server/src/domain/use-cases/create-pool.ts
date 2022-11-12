@@ -3,6 +3,9 @@ export interface CreatePool {
 }
 
 export namespace CreatePool {
-  export type Input = { title: string }
+  export type Input = {
+    title: string
+    ownerId?: string
+  }
   export type Output = { code: string }
 }

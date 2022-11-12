@@ -7,6 +7,7 @@ import { created, serverError } from '@/application/helpers/http-helper'
 
 type Request = {
   title: string
+  sub?: string
 }
 
 export class CreatePoolController extends Controller {
@@ -14,9 +15,12 @@ export class CreatePoolController extends Controller {
     super()
   }
 
-  async perform (request: Request): Promise<HttpResponse<{ code: string } | Error>> {
+  async perform ({ title, sub: ownerId }: Request): Promise<HttpResponse<{ code: string } | Error>> {
     try {
-      const poolCode = await this.createPool.execute(request)
+      const poolCode = await this.createPool.execute({
+        title,
+        ownerId
+      })
       return created(poolCode)
     } catch (error) {
       return serverError(error)

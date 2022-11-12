@@ -8,11 +8,12 @@ export class DbCreatePool implements CreatePool {
     private readonly createPoolRepository: CreatePoolRepository
   ) {}
 
-  async execute ({ title }: CreatePool.Input): Promise<CreatePool.Output> {
-    const code = this.uuidGenerator.generate()
+  async execute ({ title, ownerId }: CreatePool.Input): Promise<CreatePool.Output> {
+    const code = this.uuidGenerator.generate().toUpperCase()
     await this.createPoolRepository.create({
       title,
-      code
+      code,
+      ownerId
     })
     return { code }
   }

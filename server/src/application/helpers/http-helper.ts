@@ -6,9 +6,14 @@ export const ok = (data: any): HttpResponse => ({
   body: data
 })
 
-export const created = (data: any): HttpResponse => ({
+export const created = (data: any = null): HttpResponse => ({
   statusCode: HttpStatusCode.Created,
   body: data
+})
+
+export const noContent = (): HttpResponse => ({
+  statusCode: HttpStatusCode.NoContent,
+  body: null
 })
 
 export const badRequest = (error: Error): HttpResponse<Error> => ({

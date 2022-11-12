@@ -8,7 +8,6 @@ export class Required implements Validator {
   ) {}
 
   validate (): Error | undefined {
-    console.log(this, 'error')
     if (this.value === undefined || this.value === null) {
       return new RequiredFieldError(this.field)
     }
